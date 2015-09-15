@@ -1,16 +1,3 @@
-process.stdin.resume();
-process.stdin.setEncoding("ascii");
-
-var input = "";
-
-process.stdin.on("data", function (chunk) {
-    input += chunk;
-});
-
-process.stdin.on("end", function () {
-    processData(input);
-});
-
 function processData(input) {
     var lines = input.split(/\n/);
     var N = parseInt(lines[0]);
@@ -24,3 +11,20 @@ function processData(input) {
 
     process.stdout.write(output);
 }
+
+
+/*
+ * Read from stdin
+ */ 
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+
+var input = "";
+
+process.stdin.on("data", function (chunk) {
+    input += chunk;
+});
+
+process.stdin.on("end", function () {
+    processData(input);
+});
